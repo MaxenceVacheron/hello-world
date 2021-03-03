@@ -1,0 +1,10 @@
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker-compose -f /home/pi/remote/docker-compose.yml up
+ExecStop=/usr/bin/docker-compose -f /home/pi/remote/docker-compose.yml down
+
+[Install]
+WantedBy=default.target
