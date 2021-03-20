@@ -215,3 +215,9 @@ if $LOAD_FUNCTIONS ; then
         eval $command
     }
 fi
+
+# Plugins option in .zshrc
+plugins=(
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
