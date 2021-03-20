@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Gestures
+Comment=
+Exec=gestures
+Icon=org.cunidev.gestures
+Terminal=false
+Type=Application
+Categories=Utility;
