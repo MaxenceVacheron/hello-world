@@ -1,0 +1,5 @@
+sudo apt install dconf-editor -y
+
+dconf-editor /org/gnome/shell/keybindings/
+
+['<Super>1']
