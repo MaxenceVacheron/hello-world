@@ -26,15 +26,40 @@
 
 Open the /etc/systemd/logind.conf file in a text editor as root, for example,
 
-``` sudo -H gedit /etc/systemd/logind.conf
+```sudo -H gedit /etc/systemd/logind.conf```
+
 If HandleLidSwitch is not set to ignore then change it:
 
-``` HandleLidSwitch=ignore
+``` HandleLidSwitch=ignore```
+
 Make sure it's not commented out (it is commented out if it is preceded by the symbol #) or add it if it is missing,
 
 Restart the systemd daemon (be aware that this will log you off) with this command:
 
-```sudo systemctl restart systemd-logind
+```sudo systemctl restart systemd-logind```
 or, from 15.04 onwards:
 
-```sudo service systemd-logind restart
+```sudo service systemd-logind restart```
+
+
+## Video Issue
+in 
+```sudo vim /etc/X11/xorg.conf.d/20-intel.conf ```          
+```
+Section "Device"
+   Identifier "Intel Graphics"
+   Option "SwapbuffersWait" "true"
+   Option "AccelMethod"  "sna"
+   Option "TearFree" "true"
+EndSection
+```
+
+
+## Super + Num conf
+
+in ```dconf-editor /org/gnome/shell/keybindings```
+
+Put ```['<Super>1']```
+
+
+
