@@ -62,4 +62,12 @@ in ```dconf-editor /org/gnome/shell/keybindings```
 Put ```['<Super>1']```
 
 
+## Random Hangs on XPS with i915 drivers
 
+```sudo echo "options i915 enable_psr=0" >> /etc/modprobe.d/i915.conf```
+
+
+## Change Background Locked Screen Ubuntu
+
+```./ubuntu-gdm-set-background --color \#2C001E    ```
+```sudo ./ubuntu-gdm-set-background --color \#2C001E```
