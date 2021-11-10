@@ -1,4 +1,4 @@
-sudo apt install -y vim zsh tree traceroute htop ffmpeg pip
+sudo apt install -y vim zsh tree traceroute htop ffmpeg pip curl
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 

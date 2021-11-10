@@ -69,5 +69,17 @@ Put ```['<Super>1']```
 
 ## Change Background Locked Screen Ubuntu
 
-```./ubuntu-gdm-set-background --color \#2C001E    ```
+```bash
+wget -qO - https://github.com/PRATAP-KUMAR/ubuntu-gdm-set-background/archive/main.tar.gz | tar zx --strip-components=1 ubuntu-gdm-set-background-main/ubuntu-gdm-set-background
+```
 ```sudo ./ubuntu-gdm-set-background --color \#2C001E```
+
+## Open GNOME Menu (add this to keyboard short -> custom commmand)
+
+```gdbus call -e -d org.gnome.Shell -o /org/gnome/Shell -m org.gnome.Shell.Eval string:'Main.panel.statusArea.aggregateMenu.menu.toggle();'```
+
+## Chrome Cast Screen on Wayland 
+
+Just open chrome://flags/#enable-webrtc-pipewire-capturer set it as enabled and restart chrome. You'll be able to share your entire screen or any single window.
+
+
