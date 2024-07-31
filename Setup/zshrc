@@ -54,9 +54,16 @@ if $LOAD_FUNCTIONS ; then
     # GIT SPEED PUSH       #
     ########################
     speedPush() {
-        git add .
-        git commit --amend --no-edit
-        git push -f
+	if [ $1 ]
+	then 
+            git add .
+            git commit -m $1
+            git push -f
+	else
+	    git add .
+            git commit --amend --no-edit
+            git push -f
+	fi
     }
 
     ########################
