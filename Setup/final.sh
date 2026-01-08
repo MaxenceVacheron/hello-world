@@ -29,7 +29,7 @@ fi
 
 # --- Install APT packages ---
 if ask "Do you want to install common APT packages (git, vim, zsh, tree, traceroute, htop, ffmpeg, pip, curl, vlc, neofetch)?"; then
-    sudo apt install -y git vim zsh tree traceroute htop ffmpeg python3-pip curl vlc neofetch
+    sudo apt install -y git vim zsh tree traceroute htop curl
 fi
 
 # --- Install Oh My Zsh ---
