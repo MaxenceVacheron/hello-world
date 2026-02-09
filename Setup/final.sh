@@ -30,7 +30,7 @@ fi
 
 # --- Install APT packages ---
 if ask "Do you want to install common APT packages (git, vim, zsh, tree, htop, curl, etc.)?"; then
-    sudo apt install -y git vim zsh tree traceroute htop curl ffmpeg python3-pip vlc neofetch
+    sudo apt install -y git vim zsh tree traceroute htop curl bc
 fi
 
 # --- Install Oh My Zsh ---
@@ -161,6 +161,33 @@ b() {
 }
 
 # ==================================================
+# Mesure du temps et affichage au bout d'une nouvelle ligne
+preexec() {
+  timer_start=$EPOCHREALTIME
+}
+
+precmd() {
+  if (( timer_start )); then
+    local duration=$(( EPOCHREALTIME - timer_start ))
+    if (( duration > 0.05 )); then
+      local formatted_dur=$(printf "%.1f" $duration)
+      local timer_text="/${formatted_dur}s"
+      
+      # Récupère la largeur actuelle de la console
+      local cols=$(tput cols)
+      # Calcule le nombre d'espaces nécessaires pour pousser le texte à droite
+      local spaces=$(( cols - ${#timer_text} ))
+      
+      # 1. On saute une ligne
+      # 2. On imprime les espaces pour pousser à droite
+      # 3. On imprime le timer en gris
+      printf "\n%${spaces}s" " "
+      print -P "%F{242}${timer_text}%f"
+    fi
+    unset timer_start
+  fi
+}
+zmodload zsh/datetime
 EOF
 
     echo "✅ Custom Zsh configuration appended to ~/.zshrc"
